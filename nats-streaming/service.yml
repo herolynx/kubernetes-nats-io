@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: nats-streaming
+  name: nats-streaming
+  namespace: nats-io
+spec:
+  ports:
+  - name: monitor
+    port: 8222
+    protocol: TCP
+    targetPort: 8222
+  selector:
+    app: nats-streaming
